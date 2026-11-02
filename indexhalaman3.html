@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#3a0617">
+<title>Untuk Kamu ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--maroon:#390716;--deep:#21040c;--red:#c51f48;--ruby:#ff456d;--pink:#ffe0e8}
+body{font-family:Georgia,serif;background:var(--deep);color:var(--pink);overflow-x:hidden}
+.hero{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;justify-content:flex-end;padding:45px 6%;overflow:hidden;background:radial-gradient(ellipse at 78% 34%,#bd3457 0%,#76152f 33%,transparent 64%),linear-gradient(135deg,#1c030a,#650d27 56%,#280611)}
+/* POHON BESAR */
+.tree{position:absolute;left:-5%;top:-8%;width:64%;height:110%;z-index:1;pointer-events:none}
+.trunk{position:absolute;left:22%;top:10%;width:10%;height:100%;background:linear-gradient(90deg,#19050a,#70243a,#35101b);border-radius:45% 30% 0 0;transform:rotate(5deg);box-shadow:15px 0 30px #ff315522}
+.branch{position:absolute;height:20px;background:linear-gradient(#8e3047,#350813);border-radius:50%;transform-origin:left center}
+.branch.one{left:25%;top:25%;width:60%;transform:rotate(-30deg)}
+.branch.two{left:24%;top:39%;width:58%;transform:rotate(-8deg)}
+.branch.three{left:27%;top:48%;width:55%;transform:rotate(-43deg)}
+.branch.four{left:28%;top:32%;width:40%;transform:rotate(25deg)}
+.leaves{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 8%,#ff536f 0 12%,transparent 13%),radial-gradient(ellipse at 35% 10%,#8d1735 0 17%,transparent 18%),radial-gradient(ellipse at 60% 13%,#d52d51 0 15%,transparent 16%),radial-gradient(ellipse at 25% 25%,#71132c 0 18%,transparent 19%),radial-gradient(ellipse at 53% 30%,#f04466 0 14%,transparent 15%),radial-gradient(ellipse at 10% 42%,#bd2346 0 17%,transparent 18%),radial-gradient(ellipse at 42% 44%,#81142f 0 18%,transparent 19%),radial-gradient(ellipse at 65% 4%,#a81c3b 0 15%,transparent 16%);filter:drop-shadow(0 0 9px #ff315655)}
+/* GALERI FOTO */
+.gallery{position:absolute;inset:0 auto 0 0;width:55%;z-index:2;pointer-events:none}
+.photo{position:absolute;width:clamp(75px,10vw,135px);aspect-ratio:3/4;background:#ffe6ec;padding:6px 6px 23px;box-shadow:0 0 15px #ff365c66,0 8px 22px #12020899;transform:rotate(-7deg);animation:float 4s ease-in-out infinite}
+.photo:nth-child(even){transform:rotate(7deg);animation-delay:-2s}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{position:absolute;bottom:4px;left:0;width:100%;text-align:center;font-size:10px;color:#76142d}
+.p1{left:5%;top:15%}.p2{left:38%;top:17%}.p3{left:17%;top:42%}.p4{left:40%;top:56%}.p5{left:5%;top:68%}
+@keyframes float{0%,100%{margin-top:0}50%{margin-top:-9px}}
+/* UCAPAN */
+.content{width:min(500px,48%);position:relative;z-index:3;text-align:center;padding:30px;background:linear-gradient(135deg,#710e2bdc,#320714ed);border:1px solid #ff9bb699;border-radius:25px;backdrop-filter:blur(7px);box-shadow:0 0 30px #ff174455,0 15px 45px #12020888}
+.small-title{font:12px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(42px,6vw,76px);font-weight:normal;font-style:italic;line-height:1.05;margin:18px 0;color:#ffd4df;text-shadow:0 0 18px #ff527766}
+.subtitle{font-size:18px;line-height:1.6}
+.heart{font-size:25px;margin:12px;color:#ff5278;text-shadow:0 0 14px #ff1744;animation:heartBeat 1.5s infinite}
+@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.date{display:inline-block;background:linear-gradient(135deg,#e72d55,#8f1235);color:white;border-radius:30px;padding:10px 20px;margin-bottom:18px;font:bold 14px Arial,sans-serif;box-shadow:0 0 16px #ff315555}
+.message{font-size:15px;line-height:1.8}
+.signature{margin-top:15px;font-style:italic;font-size:19px}
+/* DAUN GUGUR */
+.falling-leaf{position:fixed;top:-40px;z-index:5;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 0 5px #ff5577)}
+@keyframes fall{to{transform:translate(var(--drift),110vh) rotate(720deg)}}
+/* GLITTER */
+.glitter{position:fixed;z-index:8;pointer-events:none;color:#fff1f5;text-shadow:0 0 5px #fff,0 0 12px #ff4d79,0 0 24px #ff1744;animation:sparkle 2s ease-in-out forwards}
+@keyframes sparkle{0%{opacity:0;transform:scale(0) rotate(0)}35%{opacity:1;transform:scale(1.2) rotate(90deg)}70%{opacity:.8;transform:scale(.8) rotate(180deg)}100%{opacity:0;transform:scale(0) rotate(270deg)}}
+/* TOMBOL KEMBALI */
+.back{position:fixed;left:15px;bottom:15px;z-index:10;text-decoration:none;color:white;background:#680d2bef;border:1px solid #ff9bb6;border-radius:30px;padding:12px 17px;font:14px Arial,sans-serif;box-shadow:0 0 15px #ff315555}
+/* RESPONSIF HP */
+@media(max-width:760px){.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:20px;padding:25px 12px 75px}.tree{width:100%;height:55%;opacity:.9}.gallery{position:relative;inset:auto;width:100%;height:190px;flex:none}.photo{width:85px;padding:5px 5px 19px}.p1{left:4%;top:8px}.p2{left:25%;top:25px}.p3{left:47%;top:3px}.p4{left:68%;top:25px}.p5{left:38%;top:95px}.content{width:100%;max-width:480px;padding:22px 16px}.content{background:linear-gradient(145deg,#710e2bf2,#300611f5);box-shadow:0 0 22px #ff174444}h1{font-size:49px}.subtitle{font-size:16px}.message{font-size:14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}}
+</style>
+</head>
+<body>
+<main class="hero" id="atas">
+  <div class="tree" aria-hidden="true">
+    <div class="trunk"></div><div class="branch one"></div><div class="branch two"></div><div class="branch three"></div><div class="branch four"></div><div class="leaves"></div>
+  </div>
+  <div class="gallery">
+    <!-- Letakkan foto1.jpg hingga foto5.jpg di folder yang sama dengan index.html -->
+    <div class="photo p1"><img src="foto1.jpg" alt="Foto kenangan 1"><span>Kenangan manis ♡</span></div>
+    <div class="photo p2"><img src="foto2.jpg" alt="Foto kenangan 2"><span>Senyum favoritku</span></div>
+    <div class="photo p3"><img src="foto3.jpg" alt="Foto kenangan 3"><span>Selalu kamu</span></div>
+    <div class="photo p4"><img src="foto4.jpg" alt="Foto kenangan 4"><span>Hari istimewa</span></div>
+    <div class="photo p5"><img src="foto5.jpg" alt="Foto kenangan 5"><span>My favorite person</span></div>
+  </div>
+  <section class="content">
+    <div class="small-title">SURPRISE SPECIAL FOR YOU</div>
+    <h1>Happy<br>Birthday</h1>
+    <p class="subtitle">Untuk pacarku yang paling aku sayangi, Sulthon Baydhowi.</p>
+    <div class="heart">♥</div>
+    <!-- Ganti tanggal di bawah ini sesuai ulang tahun pacarmu -->
+    <div class="date">3 November 2026</div>
+    <p class="message">
+      Selamat bertambah usia 19 tahun, Sulthon Baydhowi, orang yang paling aku sayangi.
+      <br><br>
+      Semangat, ya. Jangan pernah pantang menyerah dan tetaplah berusaha,
+      walaupun banyak masalah datang silih berganti. Aku percaya kamu kuat
+      dan mampu melewati semuanya.
+      <br><br>
+      Semoga apa pun yang kamu inginkan segera terwujud, selalu diberi
+      kemudahan dalam setiap langkah, dan dimudahkan untuk menggapai semua
+      cita-citamu. Jangan pernah berhenti percaya pada dirimu sendiri.
+      <br><br>
+      Selamat ulang tahun, sayangku. Aku selalu mendoakan yang terbaik
+      untukmu. Tetap jadi Sulthon yang hebat. Aku sayang kamu. ♥
+    </p>
+    <div class="signature">I love you, always. ♡</div>
+  </section>
+</main>
+<a class="back" href="#atas">← Kembali</a>
+<script>
+/* Daun merah gugur */
+function createLeaf(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const leaf=document.createElement("div");
+  leaf.className="falling-leaf";
+  leaf.textContent=["🍂","🍁","♥"][Math.floor(Math.random()*3)];
+  leaf.style.left=Math.random()*100+"vw";
+  leaf.style.setProperty("--drift",(Math.random()*180-90)+"px");
+  leaf.style.fontSize=(15+Math.random()*15)+"px";
+  leaf.style.animationDuration=(5+Math.random()*6)+"s";
+  document.body.appendChild(leaf);
+  setTimeout(()=>leaf.remove(),12000);
+}
+setInterval(createLeaf,650);
+
+/* Glitter merah, pink, dan putih berkilau */
+function createGlitter(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const glitter=document.createElement("span");
+  glitter.className="glitter";
+  glitter.textContent=["✦","✧","✶","✨","♥"][Math.floor(Math.random()*5)];
+  glitter.style.left=Math.random()*100+"vw";
+  glitter.style.top=Math.random()*100+"vh";
+  glitter.style.fontSize=(8+Math.random()*18)+"px";
+  glitter.style.animationDuration=(1.5+Math.random()*2)+"s";
+  document.body.appendChild(glitter);
+  setTimeout(()=>glitter.remove(),4000);
+}
+setInterval(createGlitter,180);
+</script>
+</body>
+</html>
